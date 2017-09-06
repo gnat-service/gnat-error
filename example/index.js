@@ -38,13 +38,13 @@ print(map.SnacksLackError.create(1000000, {details: {os: 'Maybe I am too fat.'}}
 print(map.CoffeinismError.create(999, {msgParams: {doSth: 'drink my coffee'}}));
 print(map.CoffeinismError.create('CannotWorkWithoutCoffee', {msgParams: ['shoot my plane']}));
 
-// results
-// {"name":"true.NeedCola","errorCode":1000001,"message":"Cola is not found."}
-// {"name":"true.NeedCola","errorCode":1000001,"message":"Cola is not found."}
-// {"name":"true.NeedChips","errorCode":1000000,"message":"I need some chips for coding."}
-// {"name":"true.NeedChips","errorCode":1000000,"message":"Hmmm... the last one piece of chips."}
-// {"name":"true.NeedChips","errorCode":1000000,"message":"I want more chips","details":{"expect":"KFC chips"}}
+// results (ignored `stack` property.)
+// {"name":"SnacksLackError.NeedCola","errorCode":1000001,"message":"Cola is not found."}
+// {"name":"SnacksLackError.NeedCola","errorCode":1000001,"message":"Cola is not found."}
+// {"name":"SnacksLackError.NeedChips","errorCode":1000000,"message":"I need some chips for coding."}
+// {"name":"SnacksLackError.NeedChips","errorCode":1000000,"message":"Hmmm... the last one piece of chips."}
+// {"name":"SnacksLackError.NeedChips","errorCode":1000000,"message":"I want more chips","details":{"expect":"KFC chips"}}
 /* eslint max-len: off */
-// {"name":"true.NeedChips","errorCode":1000000,"message":"I need some chips for coding.","details":{"os":"Maybe I am too fat."}}
-// {"name":"true.CannotWorkWithoutCoffee","errorCode":1001999,"message":"Let me go to cafe, so I can drink my coffee!"}
-// {"name":"true.CannotWorkWithoutCoffee","errorCode":1001999,"message":"Let me go to cafe, so I can shoot my plane!"}
+// {"name":"CoffeinismError.NeedChips","errorCode":1000000,"message":"I need some chips for coding.","details":{"os":"Maybe I am too fat."}}
+// {"name":"CoffeinismError.CannotWorkWithoutCoffee","errorCode":1001999,"message":"Let me go to cafe, so I can drink my coffee!"}
+// {"name":"CoffeinismError.CannotWorkWithoutCoffee","errorCode":1001999,"message":"Let me go to cafe, so I can shoot my plane!"}
