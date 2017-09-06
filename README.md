@@ -37,7 +37,7 @@ const error = new SomeErrorCreator('SomeTag', {details: {key: 'val'}, msgParams:
 console.log(JSON.stringify(error)) // {"name":"SomeError","errorCode":1000000,"message":"some message with a parameter","details":{"key":"val"}}
 ```
 
-## ustomization
+## Customization
 
 Custom `GnatError.prototype.toJSON()`
 -------------------------------------
