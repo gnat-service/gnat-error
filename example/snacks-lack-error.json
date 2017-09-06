@@ -1,0 +1,16 @@
+{
+    "offset": 1000000,
+    "name": "SnacksLack",
+    "messages": [
+        {
+            "index": 0,
+            "tag": "NeedChips",
+            "message": "I need some chips for coding."
+        },
+        {
+            "index": 1,
+            "tag": "NeedCola",
+            "message": "Cola is not found."
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "offset": 1001000,
+    "name": "Coffeinism",
+    "messages": [
+        {
+            "index": 999,
+            "tag": "CannotWorkWithoutCoffee",
+            "message": "Let me go to cafe, so I can ${doSth}!"
+        },
+        {
+            "index": 1,
+            "tag": "Dying",
+            "message": "The Coffeinism, it is killing me, I need my coffee!"
+        }
+    ]
+}

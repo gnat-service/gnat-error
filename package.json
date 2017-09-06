@@ -1,0 +1,42 @@
+{
+  "name": "gnat-error",
+  "version": "0.0.2",
+  "description": "Create your customized, unified error system.",
+  "main": "lib/index.js",
+  "scripts": {
+    "peerInstall": "export PKG=eslint-config-gnat && (npm info \"$PKG@latest\" peerDependencies --json | command sed 's/[\\{\\},]//g ; s/: /@/g' | xargs npm i -D \"$PKG@latest\")",
+    "coverage": "istanbul cover _mocha -- -R spec",
+    "lint": "eslint .",
+    "test": "mocha",
+    "prepublishOnly": "npm run lint && npm run coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnat-service/gnat-error.git"
+  },
+  "keywords": [
+    "json",
+    "error",
+    "micro-service"
+  ],
+  "author": "leaf4monkey <joc98@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gnat-service/gnat-error/issues"
+  },
+  "homepage": "https://github.com/gnat-service/gnat-error#readme",
+  "dependencies": {
+    "gaode-js-api": "0.0.3",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^3.19.0",
+    "eslint-config-gnat": "0.0.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.3.0",
+    "faker": "^4.1.0",
+    "mocha": "^3.5.0"
+  }
+}

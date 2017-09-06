@@ -1,0 +1,33 @@
+env:
+    es6: false
+
+parserOptions:
+    ecmaVersion: 5
+    sourceType: module
+    ecmaFeatures:
+        experimentalObjectRestSpread: false
+        jsx: false
+
+extends: gnat
+rules:
+    indent:
+        - error
+        - 4
+    strict: off
+    no-mixed-operators: off
+    no-underscore-dangle: off
+    no-prototype-builtins: off
+    prefer-spread: off
+    func-names: off
+    prefer-arrow-callback: off
+    prefer-rest-params: off
+    no-restricted-properties: off
+
+globals:
+    describe: true
+    it: true
+    before: true
+    beforeEach: true
+    after: true
+    afterEach: true
+    Math: true

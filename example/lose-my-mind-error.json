@@ -1,0 +1,11 @@
+{
+    "offset": 1000900,
+    "name": "LoseMyMind",
+    "messages": [
+        {
+            "index": 98,
+            "tag": "GonnaBeFailed",
+            "message": "This Error group will not loaded."
+        }
+    ]
+}
