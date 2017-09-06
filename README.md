@@ -39,8 +39,7 @@ console.log(JSON.stringify(error)) // {"name":"SomeError","errorCode":1000000,"m
 
 ## Customization
 
-Custom `GnatError.prototype.toJSON()`
--------------------------------------
+#### Custom `GnatError.prototype.toJSON()`
 
 ```js
 const Loader = require('gnat-error');
@@ -52,8 +51,7 @@ GnatError.prototype.toJSON = function () {
 };
 ```
 
-Custom whole GnatError class
-----------------------------
+#### Custom whole GnatError class
 
 ```js
 const Loader = require('gnat-error');
