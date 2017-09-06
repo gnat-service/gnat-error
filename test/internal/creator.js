@@ -178,6 +178,19 @@ module.exports = function () {
             });
         });
 
+        describe('.checkNum()', function () {
+            it('should do nothing if `num` is a ordinary number.', function () {
+                expect(() => Creator.checkNum(random.number())).to.not.throw();
+            });
+            it('should throw a `new TypeError()` if `num` is not number.', function () {
+                expect(() => Creator.checkNum(random.arrayElement(['', null, undefined, {}, []])))
+                    .to.throw(TypeError);
+            });
+            it('should throw a `new TypeError()` if `num` is `NaN`.', function () {
+                expect(() => Creator.checkNum(NaN)).to.throw(TypeError);
+            });
+        });
+
         describe('#getErrorCode()', function () {
             it('should return error code.', function () {
                 const min = creator.offset;
