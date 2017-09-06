@@ -1,6 +1,6 @@
 {
   "name": "gnat-error",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Create your customized, unified error system.",
   "main": "lib/index.js",
   "scripts": {
@@ -25,10 +25,6 @@
     "url": "https://github.com/gnat-service/gnat-error/issues"
   },
   "homepage": "https://github.com/gnat-service/gnat-error#readme",
-  "dependencies": {
-    "gaode-js-api": "0.0.3",
-    "lodash": "^4.17.4"
-  },
   "devDependencies": {
     "chai": "^4.1.2",
     "eslint": "^3.19.0",
@@ -37,6 +33,7 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.3.0",
     "faker": "^4.1.0",
+    "lodash": "^4.17.4",
     "mocha": "^3.5.0"
   }
 }
