@@ -87,13 +87,10 @@ module.exports = function () {
         let _range;
         let creator;
         beforeEach(function () {
+            const list = Creator.getCreatorList();
+            list && list.length && list.splice(0, list.length);
             _range = getRange();
             creator = getCreatorFromRange(_range);
-        });
-
-        afterEach(function () {
-            const list = Creator.getCreatorList();
-            list.splice(0, list.length);
         });
 
         it('.range()', function () {
@@ -222,7 +219,7 @@ module.exports = function () {
         describe('#create()', function () {
             it('should return a subclass of `GnatError` at 1st time.', function () {
                 const Err = creator.create();
-                expect(new Err()).to.be.an.instanceof(GnatError);
+                expect(new Err()).to.be.an.instanceof(GnatError.GnatError);
             });
             it('should throw an Error at 2rd time.', function () {
                 creator.create();

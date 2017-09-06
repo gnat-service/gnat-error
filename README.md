@@ -37,14 +37,38 @@ const error = new SomeErrorCreator('SomeTag', {details: {key: 'val'}, msgParams:
 console.log(JSON.stringify(error)) // {"name":"SomeError","errorCode":1000000,"message":"some message with a parameter","details":{"key":"val"}}
 ```
 
-## Customization
+## ustomization
+
+Custom `GnatError.prototype.toJSON()`
+-------------------------------------
+
+```js
+const Loader = require('gnat-error');
+
+const GnatError = Loader.GnatError.GnatError;
+GnatError.prototype.toJSON = function () {
+    // your code, don't forget return an object.
+    // besides, you may get the whole name with `GnatError.prototype.getName()`
+};
+```
+
+Custom whole GnatError class
+----------------------------
 
 ```js
 const Loader = require('gnat-error');
 
 const GnatError = Loader.GnatError;
-GnatError.prototype.toJSON = function () {
-    // your code, don't forget return an object.
-    // besides, you may get the whole name with `GnatError.prototype.getName()`
-};
+
+class SomeError extends Error {
+    constructor (message, code, name, bindStack) {
+        // your code
+    }
+    getName () {
+        return this.name;
+    }
+}
+
+GnatError.setGnatErrorClass(SomeError);
+console.log(GnatError.GnatError === SomeError); // true
 ```
