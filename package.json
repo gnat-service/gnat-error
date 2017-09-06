@@ -1,6 +1,6 @@
 {
   "name": "gnat-error",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Create your customized, unified error system.",
   "main": "lib/index.js",
   "scripts": {
