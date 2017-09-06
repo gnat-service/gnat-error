@@ -15,7 +15,7 @@ module.exports = function () {
             }
             let str;
             do {
-                str = random.word();
+                str = lorem.word();
             } while (exists.includes(str));
             usedWords.push(str);
             return str;

@@ -2,7 +2,7 @@ const MainModule = require('../lib');
 const internal = require('./internal');
 const Loader = require('../lib/error/loader');
 const Creator = require('../lib/error/creator');
-const {random} = require('faker');
+const {lorem, random} = require('faker');
 const _ = require('lodash');
 const expect = require('chai').expect;
 
@@ -10,6 +10,7 @@ internal();
 
 describe('MainModule', function () {
     let loader;
+    let config;
     let usedWords = [];
     const getTag = () => {
         let exists = usedWords;
@@ -18,7 +19,7 @@ describe('MainModule', function () {
         }
         let str;
         do {
-            str = random.word();
+            str = lorem.word();
         } while (exists.includes(str));
         usedWords.push(str);
         return str;
@@ -42,12 +43,20 @@ describe('MainModule', function () {
         list.splice(0, list.length);
         const {loadersList} = Loader;
         loadersList.splice(0, loadersList.length);
-        loader = MainModule(
+        config = [
             random.number({min: 0}),
             Math.pow(10, random.number({min: 1, max: 4})),
             getTag(),
             random.boolean()
-        );
+        ];
+        loader = MainModule(...config);
+    });
+
+    it('should create a loader.', function () {
+        const rawLoader = Loader.loadersList[0];
+        expect(rawLoader.range).to.deep.equal([config[0], config[0] + config[1] - 1]);
+        expect(rawLoader._creator.name).to.equal(config[2]);
+        expect(rawLoader._creator.bindStack).to.equal(config[3]);
     });
 
     it('should throw a `new RangeError()` when the error code space conflict.', function () {

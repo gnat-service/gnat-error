@@ -33,7 +33,7 @@ module.exports = function () {
             it('should return a brief of GnatError instance.', function () {
                 const message = lorem.words();
                 const errorCode = random.number({max: 999999, min: 100000});
-                const name = random.word();
+                const name = lorem.word();
                 const bindStack = random.boolean();
 
                 const err = new GnatError(message, errorCode, name, bindStack);
