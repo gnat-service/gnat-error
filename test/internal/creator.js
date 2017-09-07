@@ -94,9 +94,7 @@ module.exports = function () {
         });
 
         it('.range()', function () {
-            const {offset, size} = getParams();
-            const c = new Creator(offset, size, lorem.word(), random.boolean());
-            expect(Creator.range(c)).to.deep.equal([offset, offset + size - 1]);
+            expect(Creator.range(creator)).to.deep.equal(_range);
         });
 
         describe('.between()', function () {
@@ -175,19 +173,6 @@ module.exports = function () {
                 expect(
                     () => Creator.addCreator(getCreatorFromRange(range, true))
                 ).to.throw(RangeError);
-            });
-        });
-
-        describe('.checkNum()', function () {
-            it('should do nothing if `num` is a ordinary number.', function () {
-                expect(() => Creator.checkNum(random.number())).to.not.throw();
-            });
-            it('should throw a `new TypeError()` if `num` is not number.', function () {
-                expect(() => Creator.checkNum(random.arrayElement(['', null, undefined, {}, []])))
-                    .to.throw(TypeError);
-            });
-            it('should throw a `new TypeError()` if `num` is `NaN`.', function () {
-                expect(() => Creator.checkNum(NaN)).to.throw(TypeError);
             });
         });
 
