@@ -70,8 +70,6 @@ module.exports = () =>
                 expect(() => check.checkNum(-Infinity)).to.throw(TypeError);
             });
             it('should accept a `null` like value in optional mode.', function () {
-                console.log({NullIsNaN: isNaN(null)})
-                console.log({UndefinedIsNaN: isNaN(undefined)})
                 expect(() => check.checkNum(random.arrayElement([null, undefined]), {optional: true})).to.not.throw();
             });
             it('should accept `NaN` if `options.acceptNaN` is assigned to `true`', function () {
